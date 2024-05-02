@@ -1,0 +1,137 @@
+.diagonal-bg {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #c5c0b7;
+  color: #222;
+  height: 100%;
+  font-family: "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: "Playfair Display", serif;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 2em;
+}
+
+
+
+
+main {
+  width: 70%;
+  margin: 5em auto;
+}
+@media (min-width: 400px) {
+  main {
+    width: 65%;
+  }
+}
+@media (min-width: 600px) {
+  main {
+    width: 50%;
+  }
+}
+main h1 {
+  text-align: center;
+}
+
+
+
+.details {
+  display: none;
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  color: #000;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+.block {
+  /* ... existing styles ... */
+  overflow: hidden;
+  position: relative;
+}
+
+.block:hover .details {
+  display: block;
+}
+
+.details {
+    display: none;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    color: #000;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+}
+
+.chart-container {
+    /* ... existing styles ... */
+}
+
+.y-axis, .x-axis {
+    /* ... existing styles ... */
+}
+
+.block {
+    background-color: #0077b6;
+    margin: 10px 0;
+    height: 30px;
+    color: white;
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+    position: relative;
+    right: 30px; /* Align with the right side of the chart */
+    width: 0; /* Start with 0 width */
+    overflow: hidden;
+    cursor: pointer; /* Indicates that an item is interactive */
+    animation: grow 2s ease-in-out forwards; /* Animation named 'grow', runs for 2 seconds */
+}
+
+@keyframes grow {
+    to {
+        width: var(--width); /* Will grow to this width */
+    }
+}
+
+.caption {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Add a class for each year with the width percentages, using CSS variables for animation */
+.year-1980 { --width: 15.55%; }
+.year-1990 { --width: 28.45%; }
+.year-2000 { --width: 50.08%; }
+.year-2010 { --width: 75.97%; }
+.year-2021 { --width: 100%; }
+
+/* ... rest of your existing styles ... */
+
